@@ -3,20 +3,60 @@
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
 	<head>
+		<!--Import Google Icon Font-->
+      	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+      	<!--Import materialize.css-->
+      	<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+      	<!--Let browser know website is optimized for mobile-->
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" href="style/style.css" />
 		<title>EventosAPP</title>
 	</head>
 	
 	<body>
-		<h1>Cadastro de Eventos</h1>
+	
+		<header>
+			<nav>
+			    <div class="nav-wrapper">
+			      <a href="#" class="brand-logo">Cadastrar Evento</a>
+			      <a href="#" data-activates="mobile-demo" class="button-collapse"></a>
+			      <ul id="nav-mobile" class="right hide-on-med-and-down">
+			        <li>
+						<a href="/eventos" class="waves-effect waves-light btn"><i class="material-icons left">list</i>Listar Eventos</a>
+			        </li>
+			      </ul>
+			    </div>
+			</nav>
+		</header>
+	
+		<div class="container">
 		
-		<form method="post">
-			Nome: <input type="text" value="" name="nome" />
-			Local: <input type="text" value="" name="local" />
-			Data: <input type="date" value="" name="data" />
-			Horário: <input type="text" value="" name="horario" />
+			<th:block th:include="mensagemValidacao"></th:block>
 			
-			<button type="submit">Salvar</button>
-		</form>
+			<div class="formEvento">
+				<form method="post">
+					Nome: <input type="text" value="" name="nome" />
+					<div class="row">
+						<div class="input-field col s6">
+							Local: <input type="text" value="" name="local" />
+						</div>
+						<div class="input-field col s3">
+							Data: <input type="date" value="" name="data" />
+						</div>
+						<div class="input-field col s3">
+							Horário: <input type="time" value="" name="horario" />
+						</div>
+					</div>
+					<button type="submit" class="waves-effect waves-light btn">Salvar</button>
+				</form>
+			</div>
+		
+		</div>
+		
+		<!--Import jQuery before materialize.js-->
+      	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      	<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
 	</body>
 
 
